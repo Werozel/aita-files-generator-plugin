@@ -1,0 +1,7 @@
+%package
+import com.aita.AnalyticsEvent
+
+sealed class %nameAnalytics : AnalyticsEvent {
+    final override val name: String = TODO("Set name")
+    final override val feature: String = TODO("Set feature")
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugins>
+    <plugin id="com.aita.tgp" url="tgp-0.0.3.jar" version="0.0.3">
+        <idea-version since-build="203.3"/>
+        <name>AITA Template Generator</name>
+    </plugin>
+</plugins>

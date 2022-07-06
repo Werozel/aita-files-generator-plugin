@@ -1,0 +1,13 @@
+%package
+data class %nameState(
+    val viewState: %nameViewState,
+) {
+
+    companion object {
+        val EMPTY: %nameState = %nameState(TODO("Add default view state"))
+    }
+}
+
+sealed class %nameViewState {
+
+}

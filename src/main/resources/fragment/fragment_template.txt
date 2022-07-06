@@ -1,0 +1,24 @@
+%package
+import android.os.Bundle
+import android.view.View
+import androidx.lifecycle.ViewModelProvider
+import %base_fragment_import
+
+class %nameFragment : %base_fragment(%layout_id) {
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val viewModelProvider = ViewModelProvider(this, appViewModelFactory)
+        val viewModel = viewModelProvider.get(%nameViewModel::class.java)
+
+        viewModel.viewStateLiveData.observe(viewLifecycleOwner) { viewState: %nameViewState? ->
+            when (viewState) {
+
+            }
+        }
+    }
+
+    override fun getAnalyticsScreenName(): String = "%nameFragment"
+    override fun getBackStackTag(): String = "%nameFragment"
+}

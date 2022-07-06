@@ -1,0 +1,14 @@
+%package
+import com.aita.arch.Action
+import com.aita.arch.Reducer
+
+class %nameReducer : Reducer<%nameState> {
+
+    override fun acceptsAction(action: Action): Boolean =
+        action is %nameAction
+
+    override fun reduce(oldState: %nameState, action: Action): %nameState = when (action) {
+
+        else -> oldState
+    }
+}

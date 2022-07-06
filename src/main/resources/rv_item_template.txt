@@ -1,0 +1,36 @@
+%package
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import com.aita.adapter.composable.AbsDelegateViewHolder
+import com.aita.adapter.composable.AdapterDelegate
+import com.aita.adapter.composable.DelegateDiffable
+
+data class %nameCell(
+    val id: String,
+) : DelegateDiffable<%nameCell> {
+
+    override fun isSame(other: DelegateDiffable<*>): Boolean =
+        other is %nameCell && other.id == this.id
+}
+
+class %nameHolder(
+    inflater: LayoutInflater,
+    parent: ViewGroup,
+) : AbsDelegateViewHolder<%nameCell>(
+    inflater.inflate(TODO("R.layout.layout_id"), parent, false)
+) {
+
+    override fun bind(cell: %nameCell, payloads: List<Any>?) {
+        TODO("Not implemented")
+    }
+}
+
+class %nameAdapterDelegate(
+    private val inflater: LayoutInflater,
+) : AdapterDelegate<%nameCell, %nameHolder> {
+
+    override val cellClass: Class<%nameCell> = %nameCell::class.java
+
+    override fun onCreateViewHolder(parent: ViewGroup): %nameHolder =
+        %nameHolder(inflater, parent)
+}

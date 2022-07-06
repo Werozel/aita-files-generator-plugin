@@ -1,0 +1,6 @@
+%package
+import com.aita.arch.Action
+
+sealed class %nameAction : Action {
+
+}

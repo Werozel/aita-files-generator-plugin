@@ -1,0 +1,22 @@
+%package
+import android.app.Application
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import com.aita.arch.di.AppDepsProvider
+import com.aita.arch.infra.AbsViewModel
+
+class %nameViewModel(app: Application, appDepsProvider: AppDepsProvider) : AbsViewModel(app, appDepsProvider) {
+
+    private val _viewStateLiveData = MutableLiveData<%nameViewState>()
+    val viewStateLiveData: LiveData<%nameViewState> = _viewStateLiveData
+
+    init {
+        attachManagedStore(
+            reducer = %nameReducer(),
+            middleware = emptyList(),
+            initialState = %nameState.EMPTY,
+        ) { newState: %nameState ->
+            _viewStateLiveData.value = newState.viewState
+        }
+    }
+}

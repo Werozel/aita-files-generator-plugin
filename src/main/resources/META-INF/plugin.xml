@@ -1,0 +1,33 @@
+<idea-plugin>
+    <id>com.aita.tgp</id>
+    <name>AITA Template Generator</name>
+    <vendor email="a.zanin@aita.travel" url="http://aita.travel">App In The Air</vendor>
+
+    <description><![CDATA[
+    TODO
+    ]]></description>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.kotlin</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <idea-version since-build="201.3803.71"/>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="NewRecyclerviewItemAction" class="com.aita.tgp.NewRecyclerviewItemAction"
+                text="Recyclerview Item">
+            <add-to-group group-id="NewGroup" anchor="after" relative-to-action="Kotlin.NewFile"/>
+        </action>
+
+        <action id="NewFluxFragmentAction" class="com.aita.tgp.NewFluxFragmentAction"
+                text="Flux Fragment">
+            <add-to-group group-id="NewGroup" anchor="after" relative-to-action="NewRecyclerviewItemAction"/>
+        </action>
+    </actions>
+</idea-plugin>
